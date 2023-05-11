@@ -1,0 +1,26 @@
+pub contract MyContract {
+    pub struct Person {
+        pub var name: String
+        pub var age: UInt32
+        
+        init (name : String, year: UInt32) {
+            self.name = name
+            self.year = year
+        }
+    }
+
+    pub var people: {String: Person}
+    
+    init() {
+        self.people = {}
+    }
+
+    pub fun addPerson(_name: String, _year: UInt32) {
+        let person = Person(name: _name, year: _year)
+        self.people[_name] = person
+    }
+    
+    pub fun getPerson(_name: String) : Person {
+        return self.people[_name]!
+    }
+}
