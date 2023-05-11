@@ -1,7 +1,7 @@
 pub contract MyContract {
     pub struct Person {
         pub var name: String
-        pub var age: UInt32
+        pub var year: UInt32
         
         init (name : String, year: UInt32) {
             self.name = name
